@@ -155,7 +155,11 @@ export class PullRequestCoordinator {
     }
   }
 
-  /** Stop background Pull Request updates machinery for this Repository */
+  /**
+   * Stop background Pull Request updates machinery for this Repository
+   * Removes all current pull request updaters.
+   * (Use `startPullRequestUpdaters` to create some new ones.)
+   */
   public stopPullRequestUpdaters() {
     for (const pru of this.prUpdaters) {
       pru.stop()
